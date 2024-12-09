@@ -17,7 +17,6 @@ import pic8 from "../../../../public/singleProductPage/8.png";
 import { useState } from "react";
 import {
   FacebookIcon,
-  Heart,
   LinkedinIcon,
   TwitterIcon,
 } from "lucide-react";
