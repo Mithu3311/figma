@@ -131,17 +131,17 @@ const Navbar = () => {
           <div className="flex md:hidden gap-4 mt-3">
           <Link href={"/components/myAccountPage"}>
           <Button variant={"link"}>
-            <Image width={24} height={24} src={mdiAccount} alt="Account" />
+            <Image width={20} height={20} src={mdiAccount} alt="Account" />
           </Button>
         </Link>
         <Link href={"#"}>
           <Button variant={"link"}>
-            <Image width={24} height={24} src={search} alt="Search" />
+            <Image width={20} height={20} src={search} alt="Search" />
           </Button>
         </Link>
         <Link href={"#"}>
           <Button variant={"link"}>
-            <Image width={24} height={24} src={heart} alt="Favorites" />
+            <Image width={20} height={20} src={heart} alt="Favorites" />
           </Button>
         </Link>
           </div>
