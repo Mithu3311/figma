@@ -7,7 +7,7 @@ import mdiAccount from "../../../public/mdiAccountAlert.svg";
 import search from "../../../public/search.svg";
 import heart from "../../../public/heartIcon.svg";
 import cart from "../../../public/shoppingCart.svg";
-import { CircleX, CrossIcon, Menu } from "lucide-react";
+import { CircleX, Menu } from "lucide-react";
 import sofaChair from '../../../public/sofaChair.png'
 import {
   Sheet,
