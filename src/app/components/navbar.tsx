@@ -116,19 +116,22 @@ const Navbar = () => {
 
               {/* Buttons */}
               <div className="flex justify-between items-center gap-3 mt-4">
-                <Button
-                  variant={"outline"}
-                  className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
-                >
-                  View Cart
-                </Button>
+                <Link href={"/components/cartPage"}>
+                  <Button
+                    variant={"outline"}
+                    className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
+                  >
+                    View Cart
+                  </Button>
+                </Link>
                 <Link href={"/components/checkOutPage"}>
-                <Button
-                  variant={"outline"}
-                  className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
-                >
-                  Checkout
-                </Button></Link>
+                  <Button
+                    variant={"outline"}
+                    className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
+                  >
+                    Checkout
+                  </Button>
+                </Link>
               </div>
             </div>
           </SheetContent>
@@ -251,18 +254,22 @@ const Navbar = () => {
                   </div>
                   <hr />
                   <div className="flex justify-between items-center gap-3 mt-4">
-                    <Button
-                      variant={"outline"}
-                      className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
-                    >
-                      View Cart
-                    </Button>
-                    <Button
-                      variant={"outline"}
-                      className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
-                    >
-                      Checkout
-                    </Button>
+                    <Link href={"/components/cartPage"}>
+                      <Button
+                        variant={"outline"}
+                        className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
+                      >
+                        View Cart
+                      </Button>
+                    </Link>
+                    <Link href={"/components/checkOutPage"}>
+                      <Button
+                        variant={"outline"}
+                        className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
+                      >
+                        Checkout
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </SheetContent>

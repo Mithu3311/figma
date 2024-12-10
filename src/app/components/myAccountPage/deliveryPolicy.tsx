@@ -3,7 +3,7 @@ import React from 'react';
 
 const DeliveryPolicy = () => {
   return (
-    <div className={`${poppins.className} w-full flex flex-wrap justify-center gap-8 p-4`}>
+    <div className={`${poppins.className} w-full flex flex-wrap justify-center gap-8 p-4 mb-10`}>
       {/* Free Delivery */}
       <div className="w-full sm:w-[376px] flex flex-col justify-start items-start p-4">
         <h1 className="text-[24px] sm:text-[32px]">Free Delivery</h1>
