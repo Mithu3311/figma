@@ -129,18 +129,21 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="flex md:hidden gap-4 mt-3">
-            <Button variant={"link"}>
-              <Image width={24} height={24} src={mdiAccount} alt="Account" />
-            </Button>
-            <Button variant={"link"}>
-              <Image width={24} height={24} src={search} alt="Search" />
-            </Button>
-            <Button variant={"link"}>
-              <Image width={24} height={24} src={heart} alt="Favorites" />
-            </Button>
-            <Button variant={"link"}>
-              <Image width={24} height={24} src={cart} alt="Cart" />
-            </Button>
+          <Link href={"/components/myAccountPage"}>
+          <Button variant={"link"}>
+            <Image width={24} height={24} src={mdiAccount} alt="Account" />
+          </Button>
+        </Link>
+        <Link href={"#"}>
+          <Button variant={"link"}>
+            <Image width={24} height={24} src={search} alt="Search" />
+          </Button>
+        </Link>
+        <Link href={"#"}>
+          <Button variant={"link"}>
+            <Image width={24} height={24} src={heart} alt="Favorites" />
+          </Button>
+        </Link>
           </div>
         </SheetContent>
       </Sheet>
