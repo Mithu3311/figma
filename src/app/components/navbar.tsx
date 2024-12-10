@@ -154,34 +154,64 @@ const Navbar = () => {
               </Link>
             ))}
           </ul>
-          <div className="flex md:hidden gap-4 mt-3">
+          <div className="flex md:hidden gap-6 mt-3">
+            {/* Account Icon */}
             <Link href={"/components/myAccountPage"}>
-              <Button variant={"link"}>
-                <Image width={24} height={24} src={mdiAccount} alt="Account" />
-              </Button>
-            </Link>
-            <Link href={"#"}>
-              <Button variant={"link"}>
-                <Image width={24} height={24} src={search} alt="Search" />
-              </Button>
-            </Link>
-            <Link href={"#"}>
-              <Button variant={"link"}>
-                <Image width={24} height={24} src={heart} alt="Favorites" />
+              <Button variant={"link"} className="p-0">
+                <Image
+                  width={24}
+                  height={24}
+                  src={mdiAccount}
+                  alt="Account"
+                  className="w-6 h-6"
+                />
               </Button>
             </Link>
 
-            {/* Add to Cart Sidebar */}
+            {/* Search Icon */}
+            <Link href={"#"}>
+              <Button variant={"link"} className="p-0">
+                <Image
+                  width={24}
+                  height={24}
+                  src={search}
+                  alt="Search"
+                  className="w-6 h-6"
+                />
+              </Button>
+            </Link>
+
+            {/* Favorites Icon */}
+            <Link href={"#"}>
+              <Button variant={"link"} className="p-0">
+                <Image
+                  width={24}
+                  height={24}
+                  src={heart}
+                  alt="Favorites"
+                  className="w-6 h-6"
+                />
+              </Button>
+            </Link>
+
+            {/* Cart Icon */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant={"link"}>
-                  <Image width={24} height={24} src={cart} alt="Cart" />
+                <Button variant={"link"} className="p-0">
+                  <Image
+                    width={24}
+                    height={24}
+                    src={cart}
+                    alt="Cart"
+                    className="w-6 h-6"
+                  />
                 </Button>
               </SheetTrigger>
               <SheetContent
                 side="right"
                 className="w-[300px] sm:w-full bg-gray-50 flex flex-col"
               >
+                {/* Shopping Cart Content */}
                 <SheetHeader className="mt-5 px-4">
                   <SheetTitle className="text-xl font-semibold">
                     Shopping Cart
@@ -189,7 +219,6 @@ const Navbar = () => {
                   </SheetTitle>
                 </SheetHeader>
                 <div className="mt-6 px-4">
-                  {/* Cart Items */}
                   <div className="min-h-full">
                     <div className="flex flex-wrap items-center gap-3 shadow-lg rounded-xl p-4 mb-6">
                       <Image
@@ -213,7 +242,6 @@ const Navbar = () => {
                     </div>
                   </div>
 
-                  {/* Subtotal Section */}
                   <div className="flex justify-between items-center w-full mb-3 px-2 sm:px-0">
                     <h1 className="text-[14px] sm:text-[16px]">Subtotal</h1>
                     <h1 className="text-[14px] sm:text-[16px] font-semibold">
@@ -221,8 +249,6 @@ const Navbar = () => {
                     </h1>
                   </div>
                   <hr />
-
-                  {/* Buttons */}
                   <div className="flex justify-between items-center gap-3 mt-4">
                     <Button
                       variant={"outline"}
