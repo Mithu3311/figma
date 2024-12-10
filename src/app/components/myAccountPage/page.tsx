@@ -1,12 +1,14 @@
 import React from 'react'
 import Header from './header'
-import LoginForm from './loginRegister'
+import LoginRegisterForm from './loginRegister'
+import DeliveryPolicy from './deliveryPolicy'
 
 const MyAccountPage = () => {
   return (
     <div>
       <Header/>
-      <LoginForm/>
+      <LoginRegisterForm/>
+      <DeliveryPolicy/>
     </div>
   )
 }
