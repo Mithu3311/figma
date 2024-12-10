@@ -122,12 +122,13 @@ const Navbar = () => {
                 >
                   View Cart
                 </Button>
+                <Link href={"/components/checkOutPage"}>
                 <Button
                   variant={"outline"}
                   className="text-[12px] sm:text-[14px] rounded-full w-[120px] sm:w-[150px] h-[31px] sm:h-[40px]"
                 >
                   Checkout
-                </Button>
+                </Button></Link>
               </div>
             </div>
           </SheetContent>
