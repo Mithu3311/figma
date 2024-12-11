@@ -181,13 +181,13 @@ const SingleProduct = () => {
             <div className="flex">
               <span className="w-24">Share:</span>
               <div className="flex gap-4">
-                <Link href={"https://www.facebook.com/"}>
+                <Link target="_blank" href={"https://www.facebook.com/"}>
                   <FacebookIcon className="w-6 h-6 text-blue-600" />
                 </Link>
-                <Link href={"https://www.linkedin.com/"}>
+                <Link target="_blank" href={"https://www.linkedin.com/"}>
                   <LinkedinIcon className="w-6 h-6 text-blue-700" />
                 </Link>
-                <Link href={"https://x.com/?lang=en"}>
+                <Link target="_blank" href={"https://x.com/?lang=en"}>
                   <TwitterIcon className="w-6 h-6 text-blue-500" />
                 </Link>
               </div>
