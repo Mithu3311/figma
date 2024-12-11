@@ -10,9 +10,6 @@ import Rating from "@/app/components/rating";
 import { poppins } from "@/app/ui/fonts";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import pic6 from "../../../../public/singleProductPage/6.png";
-import pic7 from "../../../../public/singleProductPage/7.png";
-import pic8 from "../../../../public/singleProductPage/8.png";
 
 import { useState } from "react";
 import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
