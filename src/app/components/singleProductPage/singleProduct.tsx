@@ -15,11 +15,7 @@ import pic7 from "../../../../public/singleProductPage/7.png";
 import pic8 from "../../../../public/singleProductPage/8.png";
 
 import { useState } from "react";
-import {
-  FacebookIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from "lucide-react";
+import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 
 const SingleProduct = () => {
   const [count, setCount] = useState(1);
@@ -33,10 +29,26 @@ const SingleProduct = () => {
         {/* Left Section */}
         <div className="flex flex-col md:flex-row items-center lg:items-start lg:w-1/2">
           <div className="flex flex-row md:flex-col space-y-2 md:space-y-4 md:mr-4">
-            <Image src={pic1} alt="Picture" className="h-20 w-20 md:h-32 md:w-32" />
-            <Image src={pic2} alt="Picture" className="h-20 w-20 md:h-32 md:w-32" />
-            <Image src={pic3} alt="Picture" className="h-20 w-20 md:h-32 md:w-32" />
-            <Image src={pic4} alt="Picture" className="h-20 w-20 md:h-32 md:w-32" />
+            <Image
+              src={pic1}
+              alt="Picture"
+              className="h-20 w-20 md:h-32 md:w-32"
+            />
+            <Image
+              src={pic2}
+              alt="Picture"
+              className="h-20 w-20 md:h-32 md:w-32"
+            />
+            <Image
+              src={pic3}
+              alt="Picture"
+              className="h-20 w-20 md:h-32 md:w-32"
+            />
+            <Image
+              src={pic4}
+              alt="Picture"
+              className="h-20 w-20 md:h-32 md:w-32"
+            />
           </div>
           <div>
             <Image
@@ -52,7 +64,9 @@ const SingleProduct = () => {
         {/* Right Section */}
         <div className="lg:w-1/2 mt-8 lg:mt-0">
           <h1 className="text-2xl md:text-3xl lg:text-4xl">Asgaard Sofa</h1>
-          <h1 className="text-lg md:text-xl lg:text-2xl mt-2">Rs. 250,000.00</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl mt-2">
+            Rs. 250,000.00
+          </h1>
           <div className="flex items-center mt-4">
             <Rating
               maxRating={5}
@@ -89,15 +103,42 @@ const SingleProduct = () => {
           <div className="mt-6">
             <h5 className="text-gray-700 text-sm md:text-base">Color</h5>
             <div className="flex gap-4 mt-2">
-              <Link href={"#"}>
-                <Image src={pic6} height={30} width={30} alt="Color" />
-              </Link>
-              <Link href={"#"}>
-                <Image src={pic7} height={30} width={30} alt="Color" />
-              </Link>
-              <Link href={"#"}>
-                <Image src={pic8} height={30} width={30} alt="Color" />
-              </Link>
+              <label className="relative flex items-center justify-center">
+                <input
+                  type="checkbox"
+                  name="color"
+                  value="red"
+                  className="absolute h-full w-full opacity-0 cursor-pointer peer"
+                />
+                <span
+                  style={{ backgroundColor: "#816DFA" }}
+                  className="block h-8 w-8 rounded-full border border-gray-300 peer-checked:ring-4 peer-checked:ring-slate-500"
+                ></span>
+              </label>
+              <label className="relative flex items-center justify-center">
+                <input
+                  type="checkbox"
+                  name="color"
+                  value="blue"
+                  className="absolute h-full w-full opacity-0 cursor-pointer peer"
+                />
+                <span
+                  style={{ backgroundColor: "#000000" }}
+                  className="block h-8 w-8 rounded-full border border-gray-300 peer-checked:ring-4 peer-checked:ring-slate-500"
+                ></span>
+              </label>
+              <label className="relative flex items-center justify-center">
+                <input
+                  type="checkbox"
+                  name="color"
+                  value="green"
+                  className="absolute h-full w-full opacity-0 cursor-pointer peer"
+                />
+                <span
+                  style={{ backgroundColor: "#CDBA7B" }}
+                  className="block h-8 w-8 rounded-full border border-gray-300 peer-checked:ring-4 peer-checked:ring-slate-500"
+                ></span>
+              </label>
             </div>
           </div>
 
@@ -143,13 +184,13 @@ const SingleProduct = () => {
             <div className="flex">
               <span className="w-24">Share:</span>
               <div className="flex gap-4">
-                <Link href={"#"}>
+                <Link href={"https://www.facebook.com/"}>
                   <FacebookIcon className="w-6 h-6 text-blue-600" />
                 </Link>
-                <Link href={"#"}>
+                <Link href={"https://www.linkedin.com/"}>
                   <LinkedinIcon className="w-6 h-6 text-blue-700" />
                 </Link>
-                <Link href={"#"}>
+                <Link href={"https://x.com/?lang=en"}>
                   <TwitterIcon className="w-6 h-6 text-blue-500" />
                 </Link>
               </div>
