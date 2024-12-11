@@ -21,7 +21,7 @@ const Instagram = () => {
 
         {/* Button Section */}
         <div className="mt-6">
-          <Link href={"#"}>
+          <Link href={"https://www.instagram.com/"}>
             <Button
               variant={"ghost"}
               className="w-[200px] md:w-[255px] h-[48px] md:h-[64px] bg-componentbg shadow-lg rounded-full flex items-center justify-center text-center"

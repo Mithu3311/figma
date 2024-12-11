@@ -113,7 +113,7 @@ const OurBlog = () => {
 
       {/* View All Button */}
       <div className="text-center mt-8">
-        <Link href="#">
+        <Link href="/components/blogPage">
           <Button variant={"link"} className="underline">
             View All Posts
           </Button>

@@ -20,16 +20,16 @@ const Footer = () => {
           <div className="w-full md:w-1/3 flex flex-wrap gap-8 justify-between">
             <div className="flex flex-col gap-4">
               <h1 className="text-[16px] text-gray-500">Links</h1>
-              <Link href={"#"}>
+              <Link href={"/"}>
                 <Button variant="ghost" className="text-gray-700">Home</Button>
               </Link>
-              <Link href={"#"}>
+              <Link href={"/components/shopPage"}>
                 <Button variant="ghost" className="text-gray-700">Shop</Button>
               </Link>
               <Link href={"#"}>
                 <Button variant="ghost" className="text-gray-700">About</Button>
               </Link>
-              <Link href={"#"}>
+              <Link href={"/components/contactPage"}>
                 <Button variant="link" className="text-gray-700">Contact</Button>
               </Link>
             </div>
@@ -65,7 +65,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="mt-8 text-center text-gray-500 text-[14px]">
-          © 2022 Meubel House. All rights reserved.
+          © 2022 Meubel House. This Web created by Mithu All rights reserved.
         </div>
       </div>
     </>

@@ -26,7 +26,7 @@ const ProductsCard1 = () => {
         >
           <h3 className="text-[18px] md:text-[24px]">New Arrivals</h3>
           <h1 className="text-[36px] md:text-[48px] font-bold mt-2">Asgaard Sofa</h1>
-          <Link href="#" className="mt-4">
+          <Link href="/components/singleProductPage" className="mt-4">
             <Button variant={"outline"} className="w-[180px] md:w-[255px]">
               Order Now
             </Button>
