@@ -1,88 +1,60 @@
-import { poppins } from "@/app/ui/fonts";
-import { Button } from "@/components/ui/button";
-import { Trash } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+// 'use client'
+// import Image from 'next/image';
+// import React from 'react'
 
-const CartProducts = () => {
-  return (
-    <>
-      <div
-        className={`${poppins.className} flex justify-center items-center p-4 sm:p-6`}
-      >
-        <div className="w-full max-w-[1240px] flex flex-col lg:flex-row gap-8">
-          {/* Left Section */}
-          <div className="w-full lg:w-2/3 flex flex-col">
-            {/* Header Row */}
-            <div className="w-full flex justify-between items-center mb-6 px-4">
-              <h1 className="text-[16px] font-medium">Product</h1>
-              <h1 className="text-[16px] font-medium">Price</h1>
-              <h1 className="text-[16px] font-medium">Quantity</h1>
-              <h1 className="text-[16px] font-medium">Subtotal</h1>
-            </div>
+// import { FaPlus, FaMinus, FaTrash} from "react-icons/fa";
+// import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
+// import { addCart, delItem, subtractCart } from '@/app/store/features/cart';
+// import { Button } from '@/components/ui/button';
 
-            {/* Product Row */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 px-4">
-              <div className="sm:mr-4">
-                <Image
-                  src={"/sofaChair.png"}
-                  width={106}
-                  height={106}
-                  alt="Picture"
-                />
-              </div>
-              <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 sm:gap-0">
-                <h1 className="text-[16px] font-medium text-slate-400">
-                  Asgaard sofa
-                </h1>
-                <h1 className="text-[16px] font-medium text-slate-400">
-                  Rs. 250,000.00
-                </h1>
-                <Button
-                  variant={"outline"}
-                  className="rounded text-slate-400 px-4 py-1"
-                >
-                  1
-                </Button>
-                <h1 className="text-[16px] font-medium text-slate-900">
-                  Rs. 250,000.00
-                </h1>
-              </div>
-              <Trash className="text-[#FBEBB5] sm:ml-4" />
-            </div>
-          </div>
+// const CartCard = () => {
+//   const cartArray = useAppSelector((state) => state.cart);
+//   const dispatch = useAppDispatch();
+//   return (
+//     <>
+//     {cartArray.length>=1 && cartArray.map((item, i)=>(
+//       <div key={i} className='flex px-10 py-3'>
+//       {/* Image */}
+//       <Image 
+//       src={item.image[0]} 
+//       alt={item.title} 
+//       width={80} 
+//       height={80} 
+//       className='w-[100px] h-[100px]'/>
+//       {/* some info */}
+//       <div className='flex px-5 justify-between items-center w-full'>
+//         <div>
+//           {/* Title */}
+//         <h2 className='text-sm font-semibold leading-none line-clamp-1 text-myBlackHead mb-3'>{item.title}</h2>
+//         <div className='mt-2 flex items-center'>
+//         <Button onClick={() => dispatch(subtractCart(item))} className='group hover:bg-myWhite bg-myBlackHead text-myWhite hover:text-myBlackHead w-fit h-fit rounded text-sm duration-300'>
+//           <FaMinus className='h-2 w-2 group-hover:text-myBlackHead'/>
+//         </Button>
+//         <div className='mr-2 ml-2 scroll-m-20 text-sm font-semibold tracking-tight text-myBlackPara/80'>
+//         {item.qty}
+//         </div>
+//         <Button onClick={() => dispatch(addCart(item))} className='group hover:bg-myWhite bg-myBlackHead text-myWhite hover:text-myBlackHead w-fit h-fit rounded text-sm duration-300'>
+//           <FaPlus className='h-2 w-2 group-hover:text-myBlackHead'/>
+//         </Button>
+//       </div>
+//       {/* for Mobile Screen */}
+//        {/* Price and Delete */}
+//        <div onClick={()=>dispatch(delItem(item.uuid))} className='mt-2 lg:hidden flex flex-col gap-3'>
+//         <h3 className='text-sm font-semibold leading-none line-clamp-1 text-myBlackHead'><span>Price:&nbsp;</span>&#x20A8;{item.discount>0?(item.price-(item.price*item.discount)/100)* item.qty:item.price * item.qty}</h3>
+//         <FaTrash className='text-base font-semibold leading-none line-clamp-1 text-red-600 cursor-pointer'/>
+//       </div>
+//         </div>
+//       </div>
+//       {/* For Desktop */}
+//       {/* Price and Delete */}
+//       <div onClick={()=>dispatch(delItem(item.uuid))} className='hidden lg:flex flex-col items-end gap-5'>
+//         <h3 className='text-sm font-semibold leading-none line-clamp-1 text-myBlackHead'><span>Price:&nbsp;</span>&#x20A8;{item.discount>0?(item.price-(item.price*item.discount)/100)* item.qty:item.price * item.qty}</h3>
+//         <FaTrash className='text-base font-semibold leading-none line-clamp-1 text-red-600 cursor-pointer'/>
+//       </div>
+//     </div>
+//     ))}
+//     </>
+//   )
+// }
 
-          {/* Right Section */}
-          <div className="w-full lg:w-1/3 bg-[#FFF9E5] flex flex-col justify-center items-center py-6 px-4 rounded-lg shadow-md">
-            <h1 className="text-[24px] md:text-[32px] font-semibold mb-8">
-              Cart Totals
-            </h1>
-            <div className="flex justify-between items-center w-full px-4 mb-6">
-              <div className="flex flex-col gap-2">
-                <h1 className="text-[16px] font-medium">Subtotal</h1>
-                <h1 className="text-[16px] font-medium">Total</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="text-[16px] font-medium">Rs. 250,000.00</h1>
-                <h1 className="text-[16px] font-semibold text-[#B88E2F]">
-                  Rs. 250,000.00
-                </h1>
-              </div>
-            </div>
-            <Link href={"/components/checkOutPage"}>
-              <Button
-                variant={"outline"}
-                className="text-[16px] md:text-[20px] w-full max-w-[222px] h-[58.95px] rounded-xl"
-              >
-                Check Out
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default CartProducts;
+// export default CartCard

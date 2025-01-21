@@ -21,7 +21,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/components/shopPage", label: "Shop" },
+  { href: "/components/shop", label: "Shop" },
   { href: "#", label: "About" },
   { href: "/components/contactPage", label: "Contact" },
 ];

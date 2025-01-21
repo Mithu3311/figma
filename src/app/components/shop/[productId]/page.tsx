@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { sanityFetch } from "@/sanity/lib/fetch";
 import { productById } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity/lib/fetch";
 
 
 type Product = {
