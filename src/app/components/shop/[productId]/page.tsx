@@ -14,11 +14,12 @@ type Product = {
   stockLevel: number;
 };
 
-type Props = {
+// Correctly typing the props to align with Next.js PageProps
+export default async function SingleProductPage({
+  params,
+}: {
   params: { productId: string };
-};
-
-export default async function SingleProductPage({ params }: Props) {
+}) {
   // Fetch product data
   const product: Product | null = await sanityFetch({
     query: productById,
