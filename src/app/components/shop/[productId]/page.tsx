@@ -1,8 +1,9 @@
-import React from "react";
-import Image from "next/image";
+import React, { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { productById } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/fetch";
+import ProductDetails from "../../ProductDetails";
+import RelatedProducts from "../relatedProducts";
 
 
 type Product = {
@@ -10,7 +11,9 @@ type Product = {
   name: string;
   description: string;
   price: number;
+  category: string;
   imageUrl: string;
+  stockLevel: number;
 };
 
 type Props = {
@@ -18,41 +21,21 @@ type Props = {
 };
 
 export default async function SingleProductPage({ params }: Props) {
-  // Fetch product data using params
+  // Fetch product data
   const product: Product | null = await sanityFetch({
     query: productById,
-    params: { id: params.productId }, // Passing params here
+    params: { id: params.productId },
   });
 
-  // Handle 404
+  // If product is not found, show 404
   if (!product) {
-    notFound(); // Show 404 page if product not found
+    notFound();
   }
 
-  // Render product details
   return (
-    <div className="p-8">
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Product Image */}
-        <Image
-          src={product.imageUrl}
-          alt={product.name}
-          width={500}
-          height={500}
-          className="rounded-lg"
-        />
-
-        {/* Product Details */}
-        <div>
-          <h1 className="text-3xl font-bold">{product.name}</h1>
-          <p className="text-lg text-gray-700 mt-4">{product.description}</p>
-          <p className="text-2xl font-semibold mt-6">${product.price}</p>
-
-          <button className="mt-8 bg-blue-500 text-white px-6 py-2 rounded-lg">
-            Add to Cart
-          </button>
-        </div>
-      </div>
+    <div className="px-4 sm:px-8">
+      <ProductDetails product={product} />
+      <RelatedProducts/>
     </div>
   );
 }

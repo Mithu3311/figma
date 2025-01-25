@@ -7,7 +7,12 @@ import {
 } from 'lucide-react';
 import React from 'react';
 
-const ShopBar = () => {
+type ShopBarProps = {
+  onFilter: (type: string) => void;
+  onSort: (order: string) => void;
+};
+
+const ShopBar: React.FC<ShopBarProps> = ({ onFilter, onSort }) => {
   return (
     <>
       <div className={`${poppins.className} w-full bg-componentbg p-4`}>
@@ -18,6 +23,18 @@ const ShopBar = () => {
               <SlidersHorizontal />
             </Button>
             <h1 className="text-[14px] md:text-[16px] font-medium">Filter</h1>
+            <Button
+              className="text-[12px] md:text-[16px]"
+              onClick={() => onFilter('high')}
+            >
+              High Price
+            </Button>
+            <Button
+              className="text-[12px] md:text-[16px]"
+              onClick={() => onFilter('low')}
+            >
+              Low Price
+            </Button>
             <Button className="h-[24px] w-[24px] p-0">
               <LayoutGridIcon />
             </Button>
@@ -25,28 +42,27 @@ const ShopBar = () => {
               <GalleryVertical />
             </Button>
             <h1 className="text-[12px] md:text-[16px] text-gray-600">
-              Showing 1 to 16 of 32 results
+              Showing Results
             </h1>
           </div>
 
-          {/* Show and Sort Section */}
+          {/* Sort Section */}
           <div className="flex flex-wrap justify-center items-center gap-4">
-            {/* Show Section */}
             <div className="flex items-center gap-2">
-              <Button variant="ghost" className="text-[14px] md:text-[16px]">
-                Show
+              <Button
+                variant="ghost"
+                className="text-[14px] md:text-[16px]"
+                onClick={() => onSort('asc')}
+              >
+                Sort: Low to High
               </Button>
-              <h2 className="text-[12px] md:text-[16px] text-gray-500">16</h2>
-            </div>
-
-            {/* Sort Section */}
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" className="text-[14px] md:text-[16px]">
-                Sort by
+              <Button
+                variant="ghost"
+                className="text-[14px] md:text-[16px]"
+                onClick={() => onSort('desc')}
+              >
+                Sort: High to Low
               </Button>
-              <h2 className="text-[12px] md:text-[16px] text-gray-500">
-                Default
-              </h2>
             </div>
           </div>
         </div>

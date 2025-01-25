@@ -6,14 +6,17 @@ import React from "react";
 const Body = () => {
   return (
     <div
-      className={`${poppins.className} w-full md:w-full bg-Mybackgroundcolor flex flex-col md:flex-row p-4 justify-between items-center`}
+      className={`${poppins.className} md:w-full bg-Mybackgroundcolor flex flex-col md:flex-row p-6 md:p-12 justify-between items-center gap-8`}
     >
       {/* Text Section */}
-      <div className="w-full md:w-[440px] h-auto text-center md:text-left mb-8 md:mb-0">
-        <h1 className="text-[32px] md:text-[64px] leading-tight">
-          Rocket single seater
+      <div className="w-full md:w-[440px] text-center md:text-left">
+        <h1 className="text-[32px] md:text-[64px] font-bold leading-tight">
+          Rocket Single Seater
         </h1>
-        <Button variant={"link"} className="text-[18px] md:text-[24px] underline mt-4">
+        <Button
+          variant={"link"}
+          className="text-[18px] md:text-[24px] underline mt-6"
+        >
           Shop Now
         </Button>
       </div>
@@ -25,7 +28,7 @@ const Body = () => {
           width={853}
           height={100}
           alt="Chair Picture"
-          className="w-[90%] md:w-auto h-auto md:h-[1000px] transform"
+          className="w-[90%] md:w-auto h-auto md:h-[500px] object-contain"
         />
       </div>
     </div>

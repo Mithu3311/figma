@@ -1,10 +1,10 @@
-import Image from "next/image";
 import React from "react";
 import { poppins } from "../../ui/fonts";
-import Link from "next/link";
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { threePro } from "@/sanity/lib/queries";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { fourPro } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity/lib/fetch";
 
 type Product = {
   _id: string;
@@ -14,13 +14,22 @@ type Product = {
   imageUrl: string;
 };
 
-const Product = async () => {
-   const products: Product[] = await sanityFetch({ query: threePro });
+
+const RelatedProducts = async () => {
+  const products: Product[] = await sanityFetch({ query: fourPro });
   return (
     <div
-      className={`${poppins.className} bg-[#FAF4F4] flex flex-col md:flex-row w-full h-auto justify-between items-center p-4 gap-8`}
+      className={`${poppins.className} w-full bg-white flex flex-col items-center px-4 py-8`}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center px-4">
+      {/* Heading Section */}
+      <div className="text-center mb-8">
+        <h1 className="text-[24px] md:text-[36px] font-normal mb-2 mt-20">
+        Related Products
+        </h1>
+      </div>
+
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-center px-4">
         {products.map((product) => (
           <Link key={product._id} href={`/components/shop/${product._id}`}>
             <div className="flex flex-col items-center cursor-pointer group">
@@ -42,8 +51,15 @@ const Product = async () => {
           </Link>
         ))}
       </div>
+
+      {/* Button */}
+      <Link href="/components/shop">
+        <Button variant="ghost" className="underline text-[16px] md:text-[20px] mt-8">
+          View More
+        </Button>
+      </Link>
     </div>
   );
 };
 
-export default Product;
+export default RelatedProducts
