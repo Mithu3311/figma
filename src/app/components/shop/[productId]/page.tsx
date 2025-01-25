@@ -14,7 +14,6 @@ type Product = {
   stockLevel: number;
 };
 
-// Correctly typing the props to align with Next.js PageProps
 export default async function SingleProductPage({
   params,
 }: {
@@ -37,4 +36,16 @@ export default async function SingleProductPage({
       <RelatedProducts />
     </div>
   );
+}
+
+// Required function to define dynamic routes for Next.js
+export async function generateStaticParams() {
+  // Assuming you fetch all product IDs here
+  const products: Product[] = await sanityFetch({
+    query: `*[_type == "product"]{ _id }`,
+  });
+
+  return products.map((product) => ({
+    productId: product._id,
+  }));
 }
