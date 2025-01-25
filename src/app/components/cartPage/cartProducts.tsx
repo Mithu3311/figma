@@ -34,12 +34,12 @@ const CartProducts = () => {
   }, []);
 
   // Function to add products to the cart
-  (newProduct: Product, quantity: number = 1) => {
+  const handleAddToCart = (newProduct: Product, quantity: number = 1) => {
     setCartItems((prevCartItems) => {
       const existingItemIndex = prevCartItems.findIndex(
         (item) => item.product._id === newProduct._id
       );
-  
+
       let updatedCart;
       if (existingItemIndex > -1) {
         // If the product already exists, update its quantity
@@ -49,7 +49,7 @@ const CartProducts = () => {
         // If the product doesn't exist, add it to the cart
         updatedCart = [...prevCartItems, { product: newProduct, quantity }];
       }
-  
+
       // Save updated cart to localStorage
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       return updatedCart;
