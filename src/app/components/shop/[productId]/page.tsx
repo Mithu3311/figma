@@ -14,14 +14,11 @@ type Product = {
   stockLevel: number;
 };
 
-// Correct the type for props
-interface SingleProductPageProps {
-  params: { productId: string }; // Ensure `productId` is explicitly typed
-}
+type Props = {
+  params: { productId: string };
+};
 
-export default async function SingleProductPage({
-  params,
-}: SingleProductPageProps) {
+export default async function SingleProductPage({ params }: Props) {
   // Fetch product data
   const product: Product | null = await sanityFetch({
     query: productById,
@@ -39,15 +36,4 @@ export default async function SingleProductPage({
       <RelatedProducts />
     </div>
   );
-}
-
-// Required function to define dynamic routes
-export async function generateStaticParams() {
-  const products: Product[] = await sanityFetch({
-    query: `*[_type == "product"]{ _id }`, // Fetch all product IDs
-  });
-
-  return products.map((product) => ({
-    productId: product._id, // Ensure this matches the `[productId]` route
-  }));
 }
