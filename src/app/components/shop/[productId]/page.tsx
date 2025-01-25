@@ -14,11 +14,14 @@ type Product = {
   stockLevel: number;
 };
 
+// Correct the type for props
+interface SingleProductPageProps {
+  params: { productId: string }; // Ensure `productId` is explicitly typed
+}
+
 export default async function SingleProductPage({
   params,
-}: {
-  params: { productId: string };
-}) {
+}: SingleProductPageProps) {
   // Fetch product data
   const product: Product | null = await sanityFetch({
     query: productById,
@@ -38,14 +41,13 @@ export default async function SingleProductPage({
   );
 }
 
-// Required function to define dynamic routes for Next.js
+// Required function to define dynamic routes
 export async function generateStaticParams() {
-  // Assuming you fetch all product IDs here
   const products: Product[] = await sanityFetch({
-    query: `*[_type == "product"]{ _id }`,
+    query: `*[_type == "product"]{ _id }`, // Fetch all product IDs
   });
 
   return products.map((product) => ({
-    productId: product._id,
+    productId: product._id, // Ensure this matches the `[productId]` route
   }));
 }
