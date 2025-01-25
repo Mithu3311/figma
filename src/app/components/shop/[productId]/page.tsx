@@ -14,11 +14,11 @@ type Product = {
   stockLevel: number;
 };
 
-type Props = {
+type Type = {
   params: { productId: string };
 };
 
-export default async function SingleProductPage({ params }: Props) {
+export default async function SingleProductPage({ params }: Type) {
   // Fetch product data
   const product: Product | null = await sanityFetch({
     query: productById,
