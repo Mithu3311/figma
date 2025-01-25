@@ -14,9 +14,6 @@ type Product = {
   stockLevel: number;
 };
 
-type Props = {
-  params: { productId: string };
-};
 
 export default async function SingleProductPage({ params }: { params: { productId: string } }) {
   // Fetch product data
