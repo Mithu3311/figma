@@ -4,7 +4,6 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import ProductDetails from "../../ProductDetails";
 import RelatedProducts from "../relatedProducts";
 
-
 type Product = {
   _id: string;
   name: string;
@@ -19,7 +18,7 @@ type Props = {
   params: { productId: string };
 };
 
-export default async function SingleProductPage({ params }: Props) {
+export default async function SingleProductPage({ params }: { params: { productId: string } }) {
   // Fetch product data
   const product: Product | null = await sanityFetch({
     query: productById,
@@ -34,7 +33,7 @@ export default async function SingleProductPage({ params }: Props) {
   return (
     <div className="px-4 sm:px-8">
       <ProductDetails product={product} />
-      <RelatedProducts/>
+      <RelatedProducts />
     </div>
   );
 }
