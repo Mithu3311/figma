@@ -34,7 +34,7 @@ const CartProducts = () => {
   }, []);
 
   // Function to add products to the cart
-  const handleAddToCart = (newProduct: Product, quantity: number = 1) => {
+  (newProduct: Product, quantity: number = 1) => {
     setCartItems((prevCartItems) => {
       const existingItemIndex = prevCartItems.findIndex(
         (item) => item.product._id === newProduct._id

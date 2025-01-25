@@ -82,7 +82,7 @@ export default function ShopProducts() {
                 <p className="text-[14px] md:text-[16px] text-gray-600 mt-4 text-center line-clamp-1">
                   {product.description}
                 </p>
-                <p className="text-[18px] md:text-[24px] text-center text-blue-900 font-semibold mt-2">
+                <p className="text-[18px] md:text-[24px] text-center text-indigo-700 font-semibold mt-2">
                   ${product.price}
                 </p>
               </div>

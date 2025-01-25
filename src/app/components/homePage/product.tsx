@@ -4,7 +4,6 @@ import { poppins } from "../../ui/fonts";
 import Link from "next/link";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { threePro } from "@/sanity/lib/queries";
-import { Button } from "@/components/ui/button";
 
 type Product = {
   _id: string;
