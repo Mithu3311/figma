@@ -34,27 +34,6 @@ const CartProducts = () => {
   }, []);
 
   // Function to add products to the cart
-  const handleAddToCart = (newProduct: Product, quantity: number = 1) => {
-    setCartItems((prevCartItems) => {
-      const existingItemIndex = prevCartItems.findIndex(
-        (item) => item.product._id === newProduct._id
-      );
-
-      let updatedCart;
-      if (existingItemIndex > -1) {
-        // If the product already exists, update its quantity
-        updatedCart = [...prevCartItems];
-        updatedCart[existingItemIndex].quantity += quantity;
-      } else {
-        // If the product doesn't exist, add it to the cart
-        updatedCart = [...prevCartItems, { product: newProduct, quantity }];
-      }
-
-      // Save updated cart to localStorage
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-      return updatedCart;
-    });
-  };
 
   // Function to remove an item from the cart
   const handleRemoveItem = (productId: string) => {
