@@ -16,7 +16,7 @@ type Product = {
 
 interface SingleProductPageProps {
   params: {
-    productId: string; // Matches the [productId] route parameter
+    productId: string | undefined; // Matches the [productId] route parameter
   };
 }
 
