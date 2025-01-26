@@ -15,27 +15,25 @@ type Product = {
   stockLevel: number;
 };
 
-// Define the Props type
+// Ensure correct type for dynamic route parameters
 interface Props {
   params: {
-    productId: string; // Matches the dynamic route [productId]
+    productId: string; // Matches the [productId] dynamic segment
   };
 }
 
-// Define the dynamic rendering mode (optional)
-export const dynamic = "force-dynamic";
+// Explicitly define async rendering for the page
+export default async function SingleProductPage(context: Props) {
+  const { params } = context; // Get params from context
+  const { productId } = params;
 
-// Component for the Single Product Page
-export default async function SingleProductPage({ params }: Props) {
-  const { productId } = params; // Destructure productId from params
-
-  // Fetch product data from Sanity
+  // Fetch the product data from Sanity
   const product: Product | null = await sanityFetch({
     query: productById,
     params: { id: productId },
   });
 
-  // If product is not found, show 404 page
+  // Handle product not found
   if (!product) {
     notFound();
   }
