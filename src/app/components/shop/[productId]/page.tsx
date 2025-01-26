@@ -14,19 +14,15 @@ type Product = {
   stockLevel: number;
 };
 
-interface SingleProductPageProps {
-  params: {
-    productId: string | undefined; // Matches the [productId] route parameter
-  };
-}
+type Props = {
+  params: { productId: string };
+};
 
-export default async function SingleProductPage({ params }: SingleProductPageProps) {
-  const { productId } = params;
-
+export default async function SingleProductPage({ params }: Props) {
   // Fetch product data
   const product: Product | null = await sanityFetch({
     query: productById,
-    params: { id: productId },
+    params: { id: params.productId },
   });
 
   // If product is not found, show 404
