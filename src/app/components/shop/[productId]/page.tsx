@@ -13,7 +13,7 @@ interface Product {
   category: string;
   imageUrl: string;
   stockLevel: number;
-};
+}
 
 // Ensure correct type for dynamic route parameters
 interface Props {
@@ -23,8 +23,7 @@ interface Props {
 }
 
 // Explicitly define async rendering for the page
-export default async function SingleProductPage(context: Props) {
-  const { params } = context; // Get params from context
+export default async function SingleProductPage({ params }: Props) {
   const { productId } = params;
 
   // Fetch the product data from Sanity
