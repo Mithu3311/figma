@@ -7,14 +7,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-type Product = {
+interface Product {
   _id: string;
   name: string;
   price: number;
   imageUrl: string;
 };
 
-type CartItem = {
+interface CartItem {
   product: Product;
   quantity: number;
 };
