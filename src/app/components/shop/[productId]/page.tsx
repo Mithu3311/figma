@@ -5,7 +5,7 @@ import ProductDetails from "../../ProductDetails";
 import RelatedProducts from "../relatedProducts";
 
 // Define the product type
-type Product = {
+interface Product {
   _id: string;
   name: string;
   description: string;
